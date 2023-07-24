@@ -17,6 +17,7 @@ import 'package:netflix/infrastructure/hot_and_new/coming_soon.dart';
 import 'package:netflix/infrastructure/hot_and_new/everyone_watching.dart';
 import 'package:netflix/presentation/main_page/screen_main_page.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureInjection();
