@@ -33,7 +33,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       //get trending
 
       final result = await downloadsService.getdownloadsImage();
-      final _state = result.fold((MainFailure f) {
+      final state1 = result.fold((MainFailure f) {
         return const SearchState(
             searchResultList: [],
             idleList: [],
@@ -48,7 +48,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       });
 
       //show to ui
-      emit(_state);
+      emit(state1);
     });
 
     //search result state//////////////////////////////
@@ -62,9 +62,9 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
             isLoading: true,
             isError: false),
       );
-      final _result =
+      final result =
           await searchService.searchMovies(movieQuery: event.movieQuery);
-      final _state = _result.fold(
+      final state = result.fold(
         (MainFailure f) {
           return const SearchState(
               searchResultList: [],
@@ -82,7 +82,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         },
       );
       //show to ui
-      emit(_state);
+      emit(state);
     });
   }
 }

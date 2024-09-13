@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/core/constants.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -13,7 +12,7 @@ class AppBarWidget extends StatelessWidget {
         kwidth,
         Text(
           title,
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
         ),
         const Spacer(),
         const Icon(

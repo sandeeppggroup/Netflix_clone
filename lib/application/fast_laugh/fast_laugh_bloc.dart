@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ ValueNotifier<Set<int>> likedVideosIdsNotifier = ValueNotifier({});
 @Injectable()
 class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
   FastLaughBloc(
-    IDownloadsRepo _downloadsService,
+    IDownloadsRepo downloadsService,
   ) : super(FastLaughState.initial()) {
     on<FastLaughEvent>((event, emit) async {
       //sending loading to ui
@@ -36,10 +35,10 @@ class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
         ),
       );
       //getting trending movies
-      final _result = await _downloadsService.getdownloadsImage();
-      final _state = _result.fold(
+      final result = await downloadsService.getdownloadsImage();
+      final state = result.fold(
         (l) {
-          return FastLaughState(
+          return const FastLaughState(
             videosList: [],
             isLoading: false,
             isError: true,
@@ -53,7 +52,7 @@ class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
       );
       //send ui
 
-      emit(_state);
+      emit(state);
     });
 
     on<LikeVideo>((event, emit) async {

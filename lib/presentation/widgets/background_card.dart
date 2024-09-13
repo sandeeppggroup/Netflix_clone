@@ -13,7 +13,7 @@ class BackgroundCard extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 600,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover, image: NetworkImage(kMainimage))),
         ),
@@ -55,7 +55,7 @@ class BackgroundCard extends StatelessWidget {
         color: kblackcolor,
       ),
       label: const Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: Text(
           'Play',
           style: TextStyle(fontSize: 18, color: kblackcolor),

@@ -75,9 +75,9 @@ class EveryOneWatchingWidget extends StatelessWidget {
             ),
           ],
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: const [
+          children: [
             kheight,
             Padding(
               padding: EdgeInsets.symmetric(vertical: 8.0),

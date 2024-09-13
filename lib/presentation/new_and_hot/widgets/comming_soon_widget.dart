@@ -84,8 +84,8 @@ class CommingSoonWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Row(
-                    children:  const [
+                  const Row(
+                    children:  [
                       CustomButtonWidget(
                         icon: Icons.notifications_active_outlined,
                         title: "Remind me",
@@ -93,7 +93,7 @@ class CommingSoonWidget extends StatelessWidget {
                         textSize: 13,
                       ),
                       kwidth,
-                      const CustomButtonWidget(
+                      CustomButtonWidget(
                         icon: Icons.info_outline,
                         title: "Info",
                         iconSize: 20,

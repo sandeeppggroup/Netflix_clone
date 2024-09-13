@@ -12,28 +12,27 @@ class ScreeDownloads extends StatelessWidget {
 
   final _widgetList = [
     const _SmartDownloads(),
-    Section2(),
+    const Section2(),
     const Section3(),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
           child: AppBarWidget(title: "Downloads"),
         ),
         body: ListView.separated(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             itemBuilder: (ctx, index) => _widgetList[index],
-            separatorBuilder: (ctx, index) => SizedBox(height: 25),
+            separatorBuilder: (ctx, index) => const SizedBox(height: 25),
             itemCount: _widgetList.length));
   }
 }
 
 class Section2 extends StatelessWidget {
-  Section2({super.key});
+  const Section2({super.key});
   // final List imageList = [
   //   "https://www.themoviedb.org/t/p/w220_and_h330_face/dniWicB6fa7NvpGbguxWlNPMc5f.jpg",
   //   "https://www.themoviedb.org/t/p/w220_and_h330_face/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg",
@@ -84,14 +83,14 @@ class Section2 extends StatelessWidget {
                         DownloadsImageWidget(
                           imageList:
                               '$imageAppendUrl${state.downloads[0].posterPath}',
-                          margin: EdgeInsets.only(left: 170, top: 50),
+                          margin: const EdgeInsets.only(left: 170, top: 50),
                           angle: 25,
                           size: Size(size.width * 0.35, size.width * 0.55),
                         ),
                         DownloadsImageWidget(
                           imageList:
                               '$imageAppendUrl${state.downloads[1].posterPath}',
-                          margin: EdgeInsets.only(right: 170, top: 50),
+                          margin: const EdgeInsets.only(right: 170, top: 50),
                           angle: -20,
                           size: Size(size.width * 0.35, size.width * 0.55),
                         ),
@@ -99,7 +98,7 @@ class Section2 extends StatelessWidget {
                           radius: 10,
                           imageList:
                               '$imageAppendUrl${state.downloads[2].posterPath}',
-                          margin: EdgeInsets.only(bottom: 40, top: 50),
+                          margin: const EdgeInsets.only(bottom: 40, top: 50),
                           size: Size(size.width * 0.4, size.width * 0.6),
                         ),
                       ],
@@ -161,13 +160,11 @@ class Section3 extends StatelessWidget {
 }
 
 class _SmartDownloads extends StatelessWidget {
-  const _SmartDownloads({
-    super.key,
-  });
+  const _SmartDownloads();
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
         kwidth,
         Icon(

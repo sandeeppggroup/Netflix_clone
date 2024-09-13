@@ -11,7 +11,7 @@ class VideoListItemInheritedWidget extends InheritedWidget {
   final Downloads movieData;
 
   const VideoListItemInheritedWidget(
-      {Key? key, required this.widget, required this.movieData})
+      {super.key,  required this.widget, required this.movieData})
       : super(child: widget);
 
   @override
@@ -51,7 +51,7 @@ class VideoListItem extends StatelessWidget {
                   backgroundColor: Colors.black.withOpacity(0.5),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.volume_off,
                       color: kwhitecolor,
                       size: 30,
@@ -63,7 +63,7 @@ class VideoListItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: CircleAvatar(
                         radius: 30,
                         backgroundImage: posterPath == null
@@ -75,13 +75,13 @@ class VideoListItem extends StatelessWidget {
                       valueListenable: likedVideosIdsNotifier,
                       builder: (BuildContext context, Set<int> newLikedListIds,
                           Widget? _) {
-                        final _index = index;
-                        if (newLikedListIds.contains(_index)) {
+                        final index1 = index;
+                        if (newLikedListIds.contains(index1)) {
                           return GestureDetector(
                             onTap: () {
                               // BlocProvider.of<FastLaughBloc>(context)
-                              //     .add(UnLikeVideo(id: _index));
-                              likedVideosIdsNotifier.value.remove(_index);
+                              //     .add(UnLikeVideo(id: index1));
+                              likedVideosIdsNotifier.value.remove(index1);
                               likedVideosIdsNotifier.notifyListeners();
                             },
                             child: const VideoActionsget(
@@ -92,8 +92,8 @@ class VideoListItem extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             // BlocProvider.of<FastLaughBloc>(context)
-                            //     .add(LikeVideo(id: _index));
-                            likedVideosIdsNotifier.value.add(_index);
+                            //     .add(LikeVideo(id: index1));
+                            likedVideosIdsNotifier.value.add(index1);
                             likedVideosIdsNotifier.notifyListeners();
                           },
                           child: const VideoActionsget(
@@ -101,7 +101,7 @@ class VideoListItem extends StatelessWidget {
                         );
                       },
                     ),
-                    VideoActionsget(icon: Icons.add, title: 'My List'),
+                    const VideoActionsget(icon: Icons.add, title: 'My List'),
                     GestureDetector(
                         onTap: () {
                           final movieName =
@@ -113,8 +113,8 @@ class VideoListItem extends StatelessWidget {
                           }
                         },
                         child:
-                            VideoActionsget(icon: Icons.share, title: 'Share')),
-                    VideoActionsget(icon: Icons.play_arrow, title: 'play'),
+                            const VideoActionsget(icon: Icons.share, title: 'Share')),
+                    const VideoActionsget(icon: Icons.play_arrow, title: 'play'),
                   ],
                 )
               ],

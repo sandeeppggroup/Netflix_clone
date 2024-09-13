@@ -13,7 +13,7 @@ class NumberTitleCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MainTitle(
+        const MainTitle(
           title: "Top 10 Tv Shows In India Today",
         ),
         kheight,
